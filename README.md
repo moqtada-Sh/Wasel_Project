@@ -1,5 +1,4 @@
-Wasel Mobility API
-
+# 🚀 Wasel Mobility API
 
 ![Node.js](https://img.shields.io/badge/Node.js-18+-green)
 
@@ -7,182 +6,203 @@ Wasel Mobility API
 
 ![MySQL](https://img.shields.io/badge/Database-MySQL-blue)
 
+---
 
-
-
-
-📌 Overview
+## 📌 Overview
 
 Wasel Mobility API is a backend project developed to manage and monitor mobility-related data such as incidents and checkpoints.
-The system allows users to report incidents (like accidents, delays, or hazards) and retrieve information about road conditions.
 
-The main goal of this project is to build a clean and scalable RESTful API that can handle real-world traffic data efficiently.
+The system allows users to:
 
-⚙️ Tech Stack
+* Report incidents (accidents, delays, hazards)
+* View checkpoints
+* Retrieve road condition data
 
-Node.js
-Express.js
-MySQL
-Sequelize ORM
-JWT Authentication
-Docker (for database)
+The goal is to build a clean and scalable RESTful API that simulates real-world traffic systems.
 
-###Project Structure
+---
 
-The project follows a clean architecture approach:
+## ⚙️ Tech Stack
 
-Routes → handle API endpoints
-Controllers → process incoming requests
-Services → contain business logic
-Models (Sequelize) → interact with the database
+* Node.js
+* Express.js
+* MySQL
+* Sequelize ORM
+* JWT Authentication
+* Docker
 
-###Architecture
+---
 
+## 🏗️ Project Structure
+
+The project follows a clean architecture:
+
+* **Routes** → define API endpoints
+* **Controllers** → handle requests
+* **Services** → business logic
+* **Models (Sequelize)** → database interaction
+
+---
+
+## 🧠 Architecture
+
+```
 Client → API → Controllers → Services → Database
+```
 
-Authentication
+---
 
-The system uses JWT for authentication.
+## 🔐 Authentication
 
-After login, the user receives a token that should be included in protected requests:
+The system uses JWT authentication.
 
+After login, the user receives a token:
+
+```
 Authorization: Bearer <token>
+```
+
+---
 
 ## 📡 Main API Endpoints
 
 ### 🔐 Auth
 
-POST /api/v1/auth/register → register new user
+* `POST /api/v1/auth/register`
+* `POST /api/v1/auth/login`
+* `POST /api/v1/auth/refresh`
 
-POST /api/v1/auth/login → login user
+---
 
-POST /api/v1/auth/refresh → refresh token
+### 🚧 Incidents
 
-🚧 Incidents
+* `GET /api/v1/incidents`
+* `GET /api/v1/incidents/:id`
+* `POST /api/v1/incidents`
+* `PUT /api/v1/incidents/:id`
+* `DELETE /api/v1/incidents/:id`
+* `PATCH /api/v1/incidents/:id/status`
 
-GET /api/v1/incidents → get all incidents (pagination & filters)
+---
 
-GET /api/v1/incidents/:id → get incident by id
+### 📍 Checkpoints
 
-POST /api/v1/incidents → create incident (requires authentication)
+* `GET /api/v1/checkpoints`
+* `GET /api/v1/checkpoints/:id`
+* `POST /api/v1/checkpoints`
+* `PUT /api/v1/checkpoints/:id`
+* `DELETE /api/v1/checkpoints/:id`
 
-PUT /api/v1/incidents/:id → update incident
+---
 
-DELETE /api/v1/incidents/:id → delete incident
+### 🧾 Reports
 
-PATCH /api/v1/incidents/:id/status → change incident status (admin / moderator)
+* `GET /api/v1/reports`
+* `GET /api/v1/reports/:id`
+* `POST /api/v1/reports`
+* `POST /api/v1/reports/:id/vote`
+* `PATCH /api/v1/reports/:id/moderate`
 
-📍 Checkpoints
+---
 
-GET /api/v1/checkpoints → get all checkpoints
+### 🔔 Alerts & Notifications
 
-GET /api/v1/checkpoints/:id → get checkpoint by id
+* `POST /api/v1/alerts/subscriptions`
 
-POST /api/v1/checkpoints → create checkpoint (admin only)
+* `GET /api/v1/alerts/subscriptions/me`
 
-PUT /api/v1/checkpoints/:id → update checkpoint (admin only)
+* `PATCH /api/v1/alerts/subscriptions/:id/mute`
 
-DELETE /api/v1/checkpoints/:id → delete checkpoint (admin only)
+* `DELETE /api/v1/alerts/subscriptions/:id`
 
-🧾 Reports 
+* `GET /api/v1/alerts/notifications/me`
 
-GET /api/v1/reports → get all reports
+* `PATCH /api/v1/alerts/notifications/:id/read`
 
-GET /api/v1/reports/:id → get report by id
+---
 
-POST /api/v1/reports → create report (authenticated users)
+### 🧭 Routing
 
-POST /api/v1/reports/:id/vote → vote on report
+* `POST /api/v1/routing/estimate`
+* `GET /api/v1/routing/history`
+* `GET /api/v1/routing/:id`
 
-PATCH /api/v1/reports/:id/moderate → moderate report (admin / moderator)
+---
 
-🔔 Alerts & Notifications
+### 🌍 Context (External APIs)
 
-POST /api/v1/alerts/subscriptions → create subscription
+* `GET /api/v1/context/weather`
+* `GET /api/v1/context/reverse`
+* `GET /api/v1/context/route`
 
-GET /api/v1/alerts/subscriptions/me → get user subscriptions
+---
 
-PATCH /api/v1/alerts/subscriptions/:id/mute → mute subscription
+## 🚀 How to Run the Project
 
-DELETE /api/v1/alerts/subscriptions/:id → delete subscription
-
-GET /api/v1/alerts/notifications/me → get user notifications
-
-PATCH /api/v1/alerts/notifications/:id/read → mark notification as read
-
-🧭 Routing
-
-POST /api/v1/routing/estimate → estimate route between two points
-
-GET /api/v1/routing/history → get user route history
-
-GET /api/v1/routing/:id → get route by id
-
-🌍 Context (External Services)
-
-GET /api/v1/context/weather → get weather by coordinates
-
-GET /api/v1/context/reverse → reverse geocoding (lat/lng → address)
-
-GET /api/v1/context/route → get route using external API
-
-
-### How to Run the Project
-1. Clone the repository
+```bash
 git clone <repo-link>
 cd wasel
-2. Install dependencies
 npm install
-3. Run database using Docker
 docker compose up
-4. Run the server
 npm run dev
+```
 
-### Testing
-Functional Testing
+---
 
-All endpoints were tested using Apidog to ensure correct responses and validation.
+## 🧪 Testing
+
+### Functional Testing
+
+All endpoints were tested using **API-Dog**.
 
 ### Performance Testing
 
-Performance testing was done using k6 with different scenarios:
+Performance testing was conducted using **k6**:
 
-Read-heavy workloads
-Write-heavy workloads
-Mixed workloads
-Spike testing
-Soak testing
+* Read-heavy workloads
+* Write-heavy workloads
+* Mixed workloads
+* Spike testing
+* Soak testing
 
- Full results are available in the Wiki.
+👉 Full results are available in the Wiki.
 
+---
 
-### Documentation
+## 📘 Documentation
 
 Full project documentation is available in the Wiki, including:
 
-System architecture
-Database schema (ERD)
-API design explanation
-Performance testing results
+* System architecture
+* Database schema (ERD)
+* API design explanation
+* Performance testing results
 
- Check the Wiki for more details.
+---
 
- API Documentation (API-Dog)
+## 📡 API Documentation (API-Dog)
 
-All APIs are documented using API-Dog, including request/response formats and authentication flow.
+All APIs are documented using API-Dog, including:
 
+* Endpoint descriptions
+* Request/response schemas
+* Authentication flow
+* Error formats
 
+---
 
-### Conclusion
+## 🧠 Conclusion
 
 This project demonstrates building a structured backend system using Node.js and Express, with proper API design, database integration, and performance testing.
 
-### Team : 
+---
 
-Moqtada Shehadeh
+## 👨‍💻 Team
 
-Rashid Maraaba
-
-Batool AbuYaman
-
-Ghaidaa Halabi 
+* Moqtada Shehadeh
+* 
+* Rashid Maraaba
+* 
+* Batool AbuYaman
+* 
+* Ghaidaa Halabi
