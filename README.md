@@ -4,7 +4,7 @@ Wasel Mobility API
 ![Node.js](https://img.shields.io/badge/Node.js-18+-green)
 ![Express](https://img.shields.io/badge/Express.js-Backend-black)
 ![MySQL](https://img.shields.io/badge/Database-MySQL-blue)
-![Status](https://img.shields.io/badge/Status-Active-success)
+
 
 
 
