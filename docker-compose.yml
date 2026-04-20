@@ -1,0 +1,37 @@
+
+
+services:
+  app:
+    build: .
+    container_name: wasel_app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+    environment:
+      PORT: 3000
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: wasel        # ✅ عدلنا الاسم
+      DB_USER: root
+      DB_PASSWORD: root
+      ACCESS_SECRET: access_secret
+      REFRESH_SECRET: refresh_secret
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+  mysql:
+    image: mysql:8
+    container_name: wasel_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wasel   # ✅ نفس الاسم
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
