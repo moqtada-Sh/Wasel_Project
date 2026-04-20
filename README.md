@@ -1,5 +1,14 @@
 Wasel Mobility API
 
+
+![Node.js](https://img.shields.io/badge/Node.js-18+-green)
+![Express](https://img.shields.io/badge/Express.js-Backend-black)
+![MySQL](https://img.shields.io/badge/Database-MySQL-blue)
+![Status](https://img.shields.io/badge/Status-Active-success)
+
+
+
+
 📌 Overview
 
 Wasel Mobility API is a backend project developed to manage and monitor mobility-related data such as incidents and checkpoints.
