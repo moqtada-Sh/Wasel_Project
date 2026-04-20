@@ -112,7 +112,7 @@ GET /api/v1/context/reverse → reverse geocoding (lat/lng → address)
 GET /api/v1/context/route → get route using external API
 
 
-How to Run the Project
+### How to Run the Project
 1. Clone the repository
 git clone <repo-link>
 cd wasel
@@ -123,12 +123,12 @@ docker compose up
 4. Run the server
 npm run dev
 
-Testing
+### Testing
 Functional Testing
 
 All endpoints were tested using Apidog to ensure correct responses and validation.
 
-Performance Testing
+### Performance Testing
 
 Performance testing was done using k6 with different scenarios:
 
@@ -141,7 +141,7 @@ Soak testing
  Full results are available in the Wiki.
 
 
- Documentation
+### Documentation
 
 Full project documentation is available in the Wiki, including:
 
@@ -158,11 +158,11 @@ All APIs are documented using API-Dog, including request/response formats and au
 
 
 
- Conclusion
+### Conclusion
 
 This project demonstrates building a structured backend system using Node.js and Express, with proper API design, database integration, and performance testing.
 
-Team : 
+### Team : 
 Moqtada Shehadeh
 Rashid Maraaba
 Batool AbuYaman
