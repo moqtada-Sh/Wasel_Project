@@ -34,9 +34,13 @@ After login, the user receives a token that should be included in protected requ
 Authorization: Bearer <token>
 
 ## 📡 Main API Endpoints
+
 ### 🔐 Auth
+
 POST /api/v1/auth/register → register new user
+
 POST /api/v1/auth/login → login user
+
 POST /api/v1/auth/refresh → refresh token
 🚧 Incidents
 GET /api/v1/incidents → get all incidents (pagination & filters)
