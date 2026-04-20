@@ -121,7 +121,7 @@ Authorization: Bearer <token>
 
 ---
 
-### 🧭 Routing
+###  Routing
 
 * `POST /api/v1/routing/estimate`
 * `GET /api/v1/routing/history`
@@ -180,7 +180,7 @@ Full project documentation is available in the Wiki, including:
 
 ---
 
-## 📡 API Documentation (API-Dog)
+##  API Documentation (API-Dog)
 
 All APIs are documented using API-Dog, including:
 
@@ -200,9 +200,9 @@ This project demonstrates building a structured backend system using Node.js and
 ## 👨‍💻 Team
 
 * Moqtada Shehadeh
-* 
+  
 * Rashid Maraaba
-* 
+  
 * Batool AbuYaman
-* 
+  
 * Ghaidaa Halabi
