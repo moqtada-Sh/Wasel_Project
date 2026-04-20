@@ -27,7 +27,7 @@ Sequelize ORM
 JWT Authentication
 Docker (for database)
 
-##Project Structure
+###Project Structure
 
 The project follows a clean architecture approach:
 
@@ -36,7 +36,7 @@ Controllers → process incoming requests
 Services → contain business logic
 Models (Sequelize) → interact with the database
 
-##Architecture
+###Architecture
 
 Client → API → Controllers → Services → Database
 
