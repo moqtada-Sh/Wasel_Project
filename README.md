@@ -42,40 +42,75 @@ POST /api/v1/auth/register → register new user
 POST /api/v1/auth/login → login user
 
 POST /api/v1/auth/refresh → refresh token
+
 🚧 Incidents
+
 GET /api/v1/incidents → get all incidents (pagination & filters)
+
 GET /api/v1/incidents/:id → get incident by id
+
 POST /api/v1/incidents → create incident (requires authentication)
+
 PUT /api/v1/incidents/:id → update incident
+
 DELETE /api/v1/incidents/:id → delete incident
+
 PATCH /api/v1/incidents/:id/status → change incident status (admin / moderator)
+
 📍 Checkpoints
+
 GET /api/v1/checkpoints → get all checkpoints
+
 GET /api/v1/checkpoints/:id → get checkpoint by id
+
 POST /api/v1/checkpoints → create checkpoint (admin only)
+
 PUT /api/v1/checkpoints/:id → update checkpoint (admin only)
+
 DELETE /api/v1/checkpoints/:id → delete checkpoint (admin only)
+
 🧾 Reports 
+
 GET /api/v1/reports → get all reports
+
 GET /api/v1/reports/:id → get report by id
+
 POST /api/v1/reports → create report (authenticated users)
+
 POST /api/v1/reports/:id/vote → vote on report
+
 PATCH /api/v1/reports/:id/moderate → moderate report (admin / moderator)
+
 🔔 Alerts & Notifications
+
 POST /api/v1/alerts/subscriptions → create subscription
+
 GET /api/v1/alerts/subscriptions/me → get user subscriptions
+
 PATCH /api/v1/alerts/subscriptions/:id/mute → mute subscription
+
 DELETE /api/v1/alerts/subscriptions/:id → delete subscription
+
 GET /api/v1/alerts/notifications/me → get user notifications
+
 PATCH /api/v1/alerts/notifications/:id/read → mark notification as read
+
 🧭 Routing
+
 POST /api/v1/routing/estimate → estimate route between two points
+
 GET /api/v1/routing/history → get user route history
+
 GET /api/v1/routing/:id → get route by id
+
 🌍 Context (External Services)
+
 GET /api/v1/context/weather → get weather by coordinates
+
 GET /api/v1/context/reverse → reverse geocoding (lat/lng → address)
+
 GET /api/v1/context/route → get route using external API
+
 
 How to Run the Project
 1. Clone the repository
