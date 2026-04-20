@@ -163,7 +163,11 @@ All APIs are documented using API-Dog, including request/response formats and au
 This project demonstrates building a structured backend system using Node.js and Express, with proper API design, database integration, and performance testing.
 
 ### Team : 
+
 Moqtada Shehadeh
+
 Rashid Maraaba
+
 Batool AbuYaman
+
 Ghaidaa Halabi 
