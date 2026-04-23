@@ -12,7 +12,7 @@ services:
       PORT: 3000
       DB_HOST: mysql
       DB_PORT: 3306
-      DB_NAME: wasel        # ✅ عدلنا الاسم
+      DB_NAME: wasel        
       DB_USER: root
       DB_PASSWORD: root
       ACCESS_SECRET: access_secret
@@ -27,7 +27,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: wasel   # ✅ نفس الاسم
+      MYSQL_DATABASE: wasel    
     ports:
       - "3307:3306"
     volumes:
